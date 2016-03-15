@@ -1,14 +1,11 @@
 @import "header";
-@import "sidebar";
+@import "breadcrumb";
 @import "body";
-
-html {
-  height: 100%;
-}
+@import "sidebar";
 
 body {
-  height: 100%;
   margin: 0;
+  background-color: #e9edec;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -16,27 +13,4 @@ body {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.body-container {
-  height: 100%;
-  box-sizing: border-box;
-  padding-top: 56px;
-}
-
-.background {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-
-  &-left {
-    background-color: #151c39;
-  }
-
-  &-right {
-    background-color: #e9edec;
-    right: 0;
-  }
 }
