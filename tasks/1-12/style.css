@@ -109,6 +109,18 @@ table tbody tr:nth-of-type(even) td {
 
 table tbody tr:nth-child(1) td,
 table tbody tr:nth-child(2) td,
-table tbody tr:nth-child(3) td{
+table tbody tr:nth-child(3) td {
   color: red;
+}
+
+input {
+  width: 100px;
+  border: 2px solid #ddd;
+  margin: 20px;
+  transition: border-color,width .5s;
+}
+
+input:focus {
+  width: 200px;
+  border-color: cornflowerblue;
 }
