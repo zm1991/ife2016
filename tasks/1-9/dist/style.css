@@ -23,6 +23,9 @@ a {
 .iconfont {
   font-size: 14px; }
 
+.pull-right {
+  float: right; }
+
 .header {
   width: 100%;
   height: 56px;
@@ -55,11 +58,11 @@ a {
     float: left; }
 
 .login {
-  float: right;
+  float: left;
   margin-left: 20px; }
 
 .search-box {
-  float: right;
+  float: left;
   position: relative; }
   .search-box label {
     position: absolute;
@@ -82,8 +85,16 @@ a {
 
 .breadcrumb {
   height: 30px;
+  line-height: 30px;
   background-color: #fff;
-  margin: 56px 0 20px 260px; }
+  margin: 56px 0 20px 260px;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #999; }
+  .breadcrumb .item {
+    color: #37a9e5; }
+  .breadcrumb .divider {
+    margin: 0 4px; }
 
 .body {
   box-sizing: border-box;
