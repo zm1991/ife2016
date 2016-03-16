@@ -39,6 +39,9 @@
         ],
         "no-unused-vars": [
           1
+        ],
+        "no-undef": [
+          0
         ]
     }
 }
