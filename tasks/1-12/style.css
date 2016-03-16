@@ -1,3 +1,33 @@
+table {
+  width: 300px;
+}
+
+table thead th {
+  background-color: #000;
+  color: #fff;
+  text-align: left;
+}
+
+table tbody tr:nth-of-type(even) td {
+  background-color: #bbb;
+}
+
+table tbody tr:nth-child(-n+3) td {
+  color: red;
+}
+
+input {
+  width: 100px;
+  border: 2px solid #ddd;
+  margin: 20px;
+  transition: border-color,width .5s;
+}
+
+input:focus {
+  width: 200px;
+  border-color: cornflowerblue;
+}
+
 .banner {
   width: 250px;
   height: 150px;
@@ -21,7 +51,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  animation: .5s init linear;
+  animation: .5s slider-init linear;
 }
 
 .sliders li {
@@ -50,7 +80,7 @@
   animation: .5s slider-in linear;
 }
 
-@keyframes init {
+@keyframes slider-init {
   0% {
     left: -100%
   }
@@ -92,34 +122,4 @@
   color: white;
   text-decoration: none;
   padding: 10px 14px;
-}
-
-table {
-  width: 300px;
-}
-
-table thead th {
-  background-color: #000;
-  color: #fff;
-  text-align: left;
-}
-
-table tbody tr:nth-of-type(even) td {
-  background-color: #bbb;
-}
-
-table tbody tr:nth-child(-n+3) td {
-  color: red;
-}
-
-input {
-  width: 100px;
-  border: 2px solid #ddd;
-  margin: 20px;
-  transition: border-color,width .5s;
-}
-
-input:focus {
-  width: 200px;
-  border-color: cornflowerblue;
 }
