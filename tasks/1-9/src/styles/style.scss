@@ -1,16 +1,9 @@
+@import "common";
 @import "header";
 @import "breadcrumb";
 @import "body";
+@import "filter";
+@import "history";
+@import "stats";
+@import "modules";
 @import "sidebar";
-
-body {
-  margin: 0;
-  background-color: #e9edec;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.container {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
