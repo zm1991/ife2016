@@ -93,3 +93,22 @@
   text-decoration: none;
   padding: 10px 14px;
 }
+
+table {
+  width: 300px;
+}
+
+table thead td {
+  background-color: #000;
+  color: #fff;
+}
+
+table tbody tr:nth-of-type(even) td {
+  background-color: #bbb;
+}
+
+table tbody tr:nth-child(1) td,
+table tbody tr:nth-child(2) td,
+table tbody tr:nth-child(3) td{
+  color: red;
+}
