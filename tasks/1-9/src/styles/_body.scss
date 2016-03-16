@@ -1,7 +1,15 @@
 .body {
-  width: 1000px;
-  margin: auto;
+  box-sizing: border-box;
+  overflow: auto;
+
+  @media (max-width: 1460px) {
+    padding-left: 280px;
+    padding-right: 20px;
+    width: 100%;
+  }
 }
 
-.body-wrapper {
+.body-container {
+  width: 900px;
+  margin: auto;
 }
