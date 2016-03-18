@@ -1,0 +1,250 @@
+$main-color: #91D4DA;
+$border-color: #ECECEC;
+$border: 0.05rem solid $border-color;
+
+%init-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+%center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+%row {
+  &::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+%space-wrap {
+  padding-left: .3rem;
+  padding-right: .3rem;
+}
+
+body {
+  margin: 0;
+  font-size: .35rem;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  box-sizing: border-box;
+  background-color: #F5F5F5;
+  color: #333;
+  > header {
+    height: 1.15rem;
+    line-height: 1.15rem;
+    background-color: $main-color;
+    position: relative;
+    h1, a {
+      font-size: .4rem;
+      color: white;
+    }
+    a.goback {
+      position: absolute;
+      left: .3rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      text-decoration: none;
+      img {
+        height: .5rem;
+        vertical-align: sub;
+      }
+    }
+    h1 {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
+  > .banner {
+    width: 100%;
+    display: block;
+  }
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+
+nav {
+  height: 1.15rem;
+  background-color: #fff;
+  ul {
+    @extend %init-list;
+    display: flex;
+    height: 100%;
+    line-height: 1.15rem;
+    li {
+      flex: 1;
+      color: #656565;
+      text-align: center;
+      display: inline-block;
+      &.active {
+        border-bottom: 0.1rem solid $main-color;
+      }
+    }
+  }
+}
+
+
+.labels {
+  @extend %space-wrap;
+  background-color: #fff;
+  ul {
+    border-bottom: $border;
+    @extend %init-list;
+    display: flex;
+    li {
+      flex: 1;
+      text-align: center;
+      figure {
+        display: inline-table;
+        width: 1.2rem;
+        height: 1.2rem;
+        padding: 0;
+        margin: 0;
+        background: #00C7D6;
+        border-radius: 100%;
+        position: relative;
+        img {
+          @extend %center;
+          width: .61rem;
+          height: .80rem;
+        }
+      }
+      p {
+        padding: .1rem;
+      }
+    }
+  }
+}
+
+.columns {
+  background-color: #fff;
+  width: 100%;
+  overflow: hidden;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  ul {
+    @extend %init-list;
+    display: flex;
+    li {
+      flex: 1;
+      text-align: center;
+      &:not(:last-child) {
+        border-right: $border;
+      }
+      figure {
+        height: 2rem;
+        position: relative;
+        img {
+          width: 1.7rem;
+          @extend %center;
+        }
+      }
+      h2 {
+        font-size: .5rem;
+      }
+      h3 {
+        font-size: .35rem;
+        color: #5B5B5B;
+      }
+    }
+  }
+}
+
+article.module {
+  @extend %space-wrap;
+  background-color: #fff;
+  margin-top: .35rem;
+  header {
+    font-size: .5rem;
+    line-height: 1.2rem;
+    height: 1.2rem;
+    border-bottom: $border;
+    margin-bottom: .4rem;
+  }
+  section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-bottom: .3rem;
+    img {
+      width: 2.43rem;
+      height: 2.27rem;
+      border: .02rem solid #FEB832;
+    }
+    ul {
+      @extend %init-list;
+      width: 6.55rem;
+      height: 2.27rem;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between;
+    }
+    li {
+      // margin-left: .75rem;
+      // margin-left: .75rem;
+      // width: 50%;
+      width: 3.2rem;
+      height: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      background-color: #F8F8F8;
+    }
+  }
+}
+
+.articles {
+  background-color: #fff;
+  margin-top: .35rem;
+  article {
+    @extend %space-wrap;
+    border-bottom: $border;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    display: flex;
+    img {
+      width: 2.8rem;
+      height: 2rem;
+      margin-right: .3rem;
+    }
+    section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      font-size: .48rem;
+      flex: 1;
+    }
+    aside {
+      font-size: .35rem;
+      color: #C6C6C6;
+    }
+    ul.imgs {
+      @extend %init-list;
+      display: flex;
+      margin-top: .2rem;
+      li {
+        flex: 1;
+        margin: .04rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
