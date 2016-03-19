@@ -12,10 +12,7 @@
           var width =  window.innerWidth;
           doc.documentElement.style.fontSize = width / 10 + 'px';
         }
-        W.addEventListener(
-          'orientationchange' in W ? 'orientationchange' : 'resize',
-          setFontSize,
-          false);
+        W.addEventListener('resize', setFontSize, false);
         setFontSize();
       }(window, document));
     </script>

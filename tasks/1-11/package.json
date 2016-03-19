@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "node-sass --output-style expanded --watch style.scss style.css"
+    "dev": "node-sass --output-style expanded --watch style.scss style.css",
+    "serve": "browser-sync start --server --host='0.0.0.0' --files='*.html, *.css'"
   },
   "devDependencies": {
+    "browser-sync": "^2.11.1",
     "node-sass": "^3.4.2"
   }
 }
