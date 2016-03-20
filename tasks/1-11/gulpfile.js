@@ -20,7 +20,9 @@ gulp.task('sass', function() {
 
 gulp.task('swig', function() {
   gulp.src('src/index.html')
-    .pipe(swig())
+    .pipe(swig({
+      defaults: { cache: false }
+    }))
     .pipe(gulp.dest('./dist'))
 })
 
