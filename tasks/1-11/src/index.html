@@ -2,19 +2,13 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0 maximum-scale=1.0 user-scalable=no"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
     <meta name="theme-color" content="#91D4DA">
     <title>任务十一：移动Web页面布局实践</title>
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript">
-      !(function(W, doc){
-        function setFontSize() {
-          var width =  window.innerWidth;
-          doc.documentElement.style.fontSize = width / 10 + 'px';
-        }
-        W.addEventListener('resize', setFontSize, false);
-        setFontSize();
-      }(window, document));
+      {% include "flexible.min.js" %}
     </script>
   </head>
   <body>

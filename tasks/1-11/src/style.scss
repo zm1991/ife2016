@@ -1,6 +1,12 @@
+@function size($size) {
+  $width: 1000;
+  $scale: 10;
+  @return ($size / $width * $scale) * 1rem;
+}
+
 $main-color: #91D4DA;
 $border-color: #ECECEC;
-$border: 0.05rem solid $border-color;
+$border: size(5) solid $border-color;
 
 %init-list {
   list-style-type: none;
@@ -30,31 +36,49 @@ $border: 0.05rem solid $border-color;
   padding-right: .3rem;
 }
 
+@mixin data-dpr($field, $val) {
+  [data-dpr="1"] & {
+    #{$field}: $val;
+  }
+  [data-dpr="2"] & {
+    #{$field}: $val * 2;
+  }
+  [data-dpr="3"] & {
+    #{$field}: $val * 3;
+  }
+}
+
+@mixin font-size($size) {
+  @include data-dpr('font-size', $size);
+}
+
 body {
   margin: 0;
-  font-size: .35rem;
+  @include font-size(13px);
+  font-size: 13px;
   font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   box-sizing: border-box;
+  margin: auto;
   background-color: #F5F5F5;
   color: #333;
   > header {
-    height: 1.15rem;
-    line-height: 1.15rem;
+    height: size(115);
+    line-height: size(115);
     background-color: $main-color;
     position: relative;
     h1, a {
-      font-size: .4rem;
+      @include font-size(16px);
       color: white;
     }
     a.goback {
       position: absolute;
-      left: .3rem;
+      left: size(30);
       top: 0;
       bottom: 0;
       margin: auto;
       text-decoration: none;
       img {
-        height: .5rem;
+        @include data-dpr('height', 20px);
         vertical-align: sub;
       }
     }
@@ -76,22 +100,21 @@ figure {
   display: block;
 }
 
-
 nav {
-  height: 1.15rem;
+  height: size(115);
   background-color: #fff;
   ul {
     @extend %init-list;
     display: flex;
     height: 100%;
-    line-height: 1.15rem;
+    line-height: size(115);
     li {
       flex: 1;
       color: #656565;
       text-align: center;
       display: inline-block;
       &.active {
-        border-bottom: 0.1rem solid $main-color;
+        border-bottom: size(10) solid $main-color;
       }
     }
   }
@@ -108,23 +131,23 @@ nav {
     li {
       flex: 1;
       text-align: center;
-      padding-top: .45rem;
-      padding-bottom: .50rem;
+      padding-top: size(45);
+      padding-bottom: size(50);
       figure {
-        width: 1.2rem;
-        height: 1.2rem;
+        width: size(120);
+        height: size(120);
         margin: 0 auto;
         background: #00C7D6;
         border-radius: 100%;
         position: relative;
         img {
           @extend %center;
-          width: .61rem;
-          height: .80rem;
+          width: size(61);
+          height: size(80);
         }
       }
       p {
-        padding-top: .45rem;
+        padding-top: size(45);
         margin: 0;
       }
     }
@@ -135,8 +158,8 @@ nav {
   background-color: #fff;
   width: 100%;
   overflow: hidden;
-  padding-top: .4rem;
-  padding-bottom: .4rem;
+  padding-top: size(40);
+  padding-bottom: size(40);
   ul {
     @extend %init-list;
     display: flex;
@@ -147,18 +170,18 @@ nav {
         border-right: $border;
       }
       figure {
-        height: 2rem;
+        height: size(200);
         position: relative;
         img {
-          width: 1.7rem;
+          width: size(170);
           @extend %center;
         }
       }
       h2 {
-        font-size: .5rem;
+        @include font-size(18px);
       }
       h3 {
-        font-size: .35rem;
+        @include font-size(14px);
         color: #5B5B5B;
       }
     }
@@ -168,28 +191,28 @@ nav {
 article.module {
   @extend %space-wrap;
   background-color: #fff;
-  margin-top: .35rem;
+  margin-top: size(35);
   header {
-    font-size: .5rem;
-    line-height: 1.2rem;
-    height: 1.2rem;
+    @include font-size(16px);
+    height: size(120);
+    line-height: size(120);
     border-bottom: $border;
-    margin-bottom: .4rem;
+    margin-bottom: size(40);
   }
   section {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding-bottom: .3rem;
+    padding-bottom: size(30);
     img {
-      width: 2.43rem;
-      height: 2.27rem;
-      border: .02rem solid #FEB832;
+      width: size(243);
+      height: size(227);
+      border: size(2) solid #FEB832;
     }
     ul {
       @extend %init-list;
-      width: 6.55rem;
-      height: 2.27rem;
+      width: size(655);
+      height: size(227);
 
       display: flex;
       flex-wrap: wrap;
@@ -197,12 +220,9 @@ article.module {
       align-content: space-between;
     }
     li {
-      // margin-left: .75rem;
-      // margin-left: .75rem;
-      // width: 50%;
-      width: 3.2rem;
-      height: 1rem;
-      line-height: 1rem;
+      width: size(320);
+      height: size(100);
+      line-height: size(100);
       text-align: center;
       background-color: #F8F8F8;
     }
@@ -211,17 +231,17 @@ article.module {
 
 .articles {
   background-color: #fff;
-  margin-top: .35rem;
+  margin-top: size(35);
   article {
     @extend %space-wrap;
     border-bottom: $border;
-    padding-top: .25rem;
-    padding-bottom: .25rem;
+    padding-top: size(25);
+    padding-bottom: size(25);
     display: flex;
-    img {
-      width: 2.8rem;
-      height: 2rem;
-      margin-right: .3rem;
+    > img {
+      width: size(280);
+      height: size(200);
+      margin-right: size(30);
     }
     section {
       flex: 1;
@@ -229,20 +249,20 @@ article.module {
       flex-direction: column;
     }
     header {
-      font-size: .48rem;
+      @include font-size(16px);
       flex: 1;
     }
     aside {
-      font-size: .35rem;
+      @include font-size(13px);
       color: #C6C6C6;
     }
     ul.imgs {
       @extend %init-list;
       display: flex;
-      margin-top: .2rem;
+      margin-top: size(20);
       li {
         flex: 1;
-        margin: .04rem;
+        margin: size(4);
         img {
           width: 100%;
         }
